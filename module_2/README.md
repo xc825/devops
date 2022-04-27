@@ -22,3 +22,29 @@ martins@martins-Vostro-5568:~/git_repos/devops$ git hash-object ./module_2/image
 3dc9cce67ad44b6fe1c3b4b948a49d66c55d302a
 ```
 
+##### Pārbaudīt kādas izmaiņas tika veiktas iepriekšējās nedēļas laikā. Atrast vismaz divus veidus kā to izdarīt.
+```sh
+$ git log --since=1.week
+$ git log --since="2022-04-21"
+$ git log --since="1 week ago"
+```
+
+Atrast commit kurus veica autors - “Laura Pacilio”
+
+```sh
+$ git log --author "Laura Pacilio"
+```
+
+Atrast vai Laura ir veikusi commit pagājušā gada septembrī? Jā, ir veikusi.
+
+```sh
+git log --author "Laura Pacilio" --since="last year august" --until="last year september"
+```
+
+Vai Laura ir veikusi commit vakar? Nav veikusi.
+
+```sh
+$ git log --author "Laura Pacilio" --since=2.days --until=1.day
+```
+
+
